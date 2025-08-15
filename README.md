@@ -64,7 +64,7 @@ A stunning, professional frontend for an Aptitude Test platform with jaw-droppin
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   https://github.com/Dev-axay18/tnp-Apti.git
    cd tp-frontend
    ```
 

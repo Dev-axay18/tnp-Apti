@@ -1,0 +1,66 @@
+// API Endpoints
+// Authentication Routes
+POST   /api/auth/register          // Student registration
+POST   /api/auth/login             // Student/Admin login
+POST   /api/auth/google            // Google OAuth
+POST   /api/auth/logout            // Logout
+POST   /api/auth/refresh           // Refresh token
+GET    /api/auth/profile           // Get user profile
+PUT    /api/auth/profile           // Update profile
+POST   /api/auth/change-password  // Change password
+POST   /api/auth/forgot-password  // Forgot password
+POST   /api/auth/reset-password   // Reset password
+
+// Events Routes (Aptitude Tests)
+GET    /api/events                 // Get all events
+GET    /api/events/:id             // Get specific event
+POST   /api/events                 // Create event (admin only)
+PUT    /api/events/:id             // Update event (admin only)
+DELETE /api/events/:id             // Delete event (admin only)
+GET    /api/events/category/:category  // Get events by category
+GET    /api/events/difficulty/:level   // Get events by difficulty
+GET    /api/events/search          // Search events
+
+// Registration Routes
+POST   /api/registrations          // Register for event
+GET    /api/registrations/user/:userId  // Get user registrations
+GET    /api/registrations/event/:eventId // Get event participants
+PUT    /api/registrations/:id      // Update registration
+DELETE /api/registrations/:id      // Cancel registration
+
+// Test Taking Routes
+POST   /api/tests/:eventId/start  // Start test
+POST   /api/tests/:eventId/submit // Submit test answers
+GET    /api/tests/:eventId/result // Get test result
+GET    /api/tests/:eventId/questions // Get test questions
+
+// Admin Routes
+GET    /api/admin/dashboard        // Admin dashboard stats
+GET    /api/admin/users            // Get all users
+PUT    /api/admin/users/:id        // Update user
+DELETE /api/admin/users/:id        // Delete user
+GET    /api/admin/events           // Get all events with details
+GET    /api/admin/registrations    // Get all registrations
+POST   /api/admin/scores           // Add/update scores
+GET    /api/admin/analytics        // Get analytics data
+
+// Certificate Routes
+GET    /api/certificates/user/:userId  // Get user certificates
+GET    /api/certificates/:id       // Get specific certificate
+POST   /api/certificates/generate  // Generate certificate (admin)
+PUT    /api/certificates/:id       // Update certificate
+DELETE /api/certificates/:id       // Revoke certificate
+
+// Questions Routes (Admin)
+GET    /api/questions              // Get question bank
+POST   /api/questions              // Create question
+PUT    /api/questions/:id          // Update question
+DELETE /api/questions/:id          // Delete question
+GET    /api/questions/category/:category  // Get questions by category
+GET    /api/questions/difficulty/:level   // Get questions by difficulty
+
+// Analytics Routes
+GET    /api/analytics/events       // Event performance analytics
+GET    /api/analytics/users        // User performance analytics
+GET    /api/analytics/categories   // Category performance analytics
+GET    /api/analytics/leaderboard  // Top performers

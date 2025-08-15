@@ -1,0 +1,97 @@
+users collection
+{
+  _id: ObjectId,
+  name: String,
+  email: String,
+  password: String, // hashed
+  role: String, // "student" | "admin"
+  avatar: String,
+  googleId: String, // for OAuth
+  createdAt: Date,
+  updatedAt: Date,
+  lastLogin: Date,
+  isActive: Boolean
+}
+
+// events collection (aptitude tests)
+{
+  _id: ObjectId,
+  title: String,
+  description: String,
+  category: String, // "Technical" | "Logical" | "Verbal" | "Numerical" | "General"
+  difficulty: String, // "easy" | "medium" | "hard"
+  startDate: Date,
+  endDate: Date,
+  duration: Number, // in minutes
+  maxParticipants: Number,
+  currentParticipants: Number,
+  questions: [{
+    questionId: ObjectId,
+    question: String,
+    type: String, // "multiple_choice" | "true_false" | "fill_blank" | "essay"
+    options: [String], // for multiple choice
+    correctAnswer: String,
+    points: Number
+  }],
+  image: String,
+  isActive: Boolean,
+  createdBy: ObjectId, // admin user ID
+  createdAt: Date,
+  updatedAt: Date
+}
+
+// registrations collection
+{
+  _id: ObjectId,
+  userId: ObjectId, // reference to users
+  eventId: ObjectId, // reference to events
+  registrationDate: Date,
+  status: String, // "registered" | "completed" | "cancelled"
+  score: Number, // percentage
+  answers: [{
+    questionId: ObjectId,
+    answer: String,
+    isCorrect: Boolean,
+    points: Number
+  }],
+  startTime: Date,
+  endTime: Date,
+  duration: Number, // actual time taken
+  certificate: {
+    certificateId: String,
+    issuedDate: Date,
+    downloadUrl: String
+  }
+}
+
+// certificates collection
+{
+  _id: ObjectId,
+  certificateId: String, // unique identifier
+  userId: ObjectId,
+  eventId: ObjectId,
+  score: Number,
+  issuedDate: Date,
+  downloadUrl: String,
+  isRevoked: Boolean,
+  revokedDate: Date,
+  revokedReason: String
+}
+
+// questions collection (question bank)
+{
+  _id: ObjectId,
+  question: String,
+  type: String,
+  category: String,
+  difficulty: String,
+  options: [String],
+  correctAnswer: String,
+  points: Number,
+  explanation: String,
+  tags: [String],
+  createdBy: ObjectId,
+  isActive: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}

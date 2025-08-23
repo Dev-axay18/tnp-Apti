@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./Backend/index.js",
-    "dev": "nodemon ./Backend/index.js"
+    "dev": "nodemon ./Backend/index.js",
+    "build": "echo 'No build step required'"
   },
   "author": "Shekhar Tayde",
   "license": "ISC",

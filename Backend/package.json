@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Official website backend for Training and Placement Cell of Maharashtra Institute of Technology, Aurangabad.",
-  "main": "index.js",
+  "main": "./Backend/index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node ./Backend/index.js",
+    "dev": "nodemon ./Backend/index.js"
   },
   "author": "Shekhar Tayde",
   "license": "ISC",
@@ -24,5 +24,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "storeId": "akshay"
 }
